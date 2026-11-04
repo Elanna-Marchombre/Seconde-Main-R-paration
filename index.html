@@ -4,162 +4,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réparations & Seconde Main</title>
+    <title>Seconde-Main & réparations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #e7efe3;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            color: #1c2b21;
+        }
+
+        /* ---------- Header ---------- */
+        header {
+            background: #4a6b53;
+            padding: 28px 22px;
+            border-bottom: 6px solid #cdd9c8;
+        }
+
+        h1 {
+            font-family: "Arial", cursive;
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        main {
+            padding: 32px 22px;
+        }
+
+        /* ---------- Filtres ---------- */
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .chip {
+            padding: 0 26px;
+            height: 68px;
+            border: 3px solid #cdd9c8;
+            border-radius: 999px;
+            background: #f8faf6;
+            color: #1c2b21;
+            font-size: 22px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .2s, color .2s, border-color .2s;
+        }
+
+        .chip:hover {
+            background: #eef3ea;
+        }
+
+        .chip.active {
+            background: #4a6b53;
+            border-color: #4a6b53;
+            color: #fff;
+        }
+
+        /* ---------- Cartes ---------- */
+        .cards {
+            display: flex;
+            align-items: stretch;
+            gap: 30px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+        }
+
+        .card {
+            flex: 0 0 368px;
+            display: flex;
+            flex-direction: column;
+            background: #f8faf6;
+            border: 1px solid #cdd9c8;
+            border-radius: 22px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .card-visual {
+            height: 226px;
+            overflow: hidden;
+        }
+
+        .card-visual img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            flex: 1;
+            min-height: 140px;
+            padding: 28px 24px 32px;
+        }
+
+        .card-title {
+            margin: 0 0 14px;
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .card-meta {
+            margin: 0;
+            min-height: 1.4em;
+            font-size: 20px;
+            color: #566759;
+        }
+
+        .vert {
+            background: #d4e2d0;
+        }
+
+        .rose {
+            background: #f6d5d5;
+        }
+
+        .menthe {
+            background: #d6ebd9;
+        }
+
+        .jaune {
+            background: #f6e8b8;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="wrap">
-        <header>
-            <a class="logo" href="#">Remise</a>
-            <nav><a href="#cours">Cours d’informatique</a><a href="#articles">Tous les articles</a><a
-                    href="#contact">Nous contacter</a></nav>
-        </header>
+    <header>
+        <h1>Seconde Main & Réparation</h1>
+    </header>
 
-        <main>
-            <div class="hero">
-                <div>
-                    <h1>Ce qui a déjà servi servira encore.</h1>
-                    <p>Vêtements, meubles, livres et objets du quotidien, vérifiés et remis en circulation à prix doux.
-                        Achetez, vendez, donnez une deuxième vie.</p>
-                    <a class="btn" href="#articles">Voir les articles</a><a class="btn alt" href="#cours">Cours
-                        d’informatique</a>
-                </div>
-                <div class="hangtag" aria-hidden="true"><s>89 CHF</s><b>24 CHF</b><span>Veste en jean, état très
-                        bon</span></div>
+    <main>
+        <div class="filters">
+            <button class="chip active" data-target="Cours">Nos cours</button>
+            <button class="chip" data-target="Articles">Nos articles</button>
+            <button class="chip" data-target="Contactes">Nous contacter</button>
+        </div>
+
+        <!-- Les id doivent être identiques aux data-target (majuscules comprises) -->
+        <section id="Cours" class="panel">
+            <div class="cards">
+
+                <article class="card">
+                    <div class="card-visual vert"><img src="IAM.jpg" alt="Utilisation de l'IA"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Utilisation de l'IA</h3>
+                        <p class="card-meta"></p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-visual rose"><img src="CoursPC.webp" alt="Cours PC Windows"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Utiliser son PC correctement</h3>
+                        <p class="card-meta">Windows</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-visual menthe"><img src="Securite.jpg" alt="Sécurité informatique"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Sécurité informatique</h3>
+                        <p class="card-meta">Windows</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-visual menthe"><img src="MDP.jpg" alt="Gestionnaire de mots de passe"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Gestionnaire de mots de passe</h3>
+                        <p class="card-meta">Windows & Téléphone</p>
+                    </div>
+                </article>
+
             </div>
+        </section>
 
-            <section id="articles">
-                <h2>Tous les articles</h2>
-                <div class="filters" role="group" aria-label="Filtrer par catégorie">
-                    <button aria-pressed="true" data-f="all">Tout</button>
-                    <button aria-pressed="false" data-f="Mode">Mode</button>
-                    <button aria-pressed="false" data-f="Maison">Maison</button>
-                    <button aria-pressed="false" data-f="Livres">Livres</button>
-                    <button aria-pressed="false" data-f="Sport">Sport</button>
-                </div>
-                <div class="grid" id="grid">
-                    <article class="item">
-                        <div class="ph" style="background:#d4e2d0" aria-hidden="true">🧥</div>
-                        <div class="body">
-                            <h3>Veste en jean</h3><small>Mode · Taille M</small>
-                            <div class="price"><strong> CHF</strong><em>Très bon</em></div>
-                        </div>
-                    </article>
-                    <article class="item">
-                        <div class="ph" style="background:#f6d5d5" aria-hidden="true">👗</div>
-                        <div class="body">
-                            <h3>Robe d’été fleurie</h3><small>Mode · Taille 38</small>
-                            <div class="price"><strong>15 CHF</strong><em>Bon</em></div>
-                        </div>
-                    </article>
-                    <article class="item">
-                        <div class="ph" style="background:#d6ecd9" aria-hidden="true">👟</div>
-                        <div class="body">
-                            <h3>Baskets running</h3><small>Sport · Pointure 42</small>
-                            <div class="price"><strong>30 CHF</strong><em>Bon</em></div>
-                        </div>
-                    </article>
-                    <article class="item">
-                        <div class="ph" style="background:#f7e8b8" aria-hidden="true">💡</div>
-                        <div class="body">
-                            <h3>Lampe de bureau</h3><small>Maison · Métal, 40 cm</small>
-                            <div class="price"><strong>12 CHF</strong><em>Très bon</em></div>
-                        </div>
-                    </article>
-                    <article class="item">
-                        <div class="ph" style="background:#d6ecd9" aria-hidden="true">🛋️</div>
-                        <div class="body">
-                            <h3>Fauteuil vintage</h3><small>Maison · Tissu vert</small>
-                            <div class="price"><strong>95 CHF</strong><em>Bon</em></div>
-                        </div>
-                    </article>
-                    <article class="item">
-                        <div class="ph" style="background:#e6dcf3" aria-hidden="true">📚</div>
-                        <div class="body">
-                            <h3>Roman policier</h3><small>Livres · Poche</small>
-                            <div class="price"><strong>3 CHF</strong><em>Correct</em></div>
-                        </div>
-                    </article>
-                    <article class="item">
-                        <div class="ph" style="background:#e3ecd9" aria-hidden="true">🚲</div>
-                        <div class="body">
-                            <h3>Vélo de ville</h3><small>Sport · Cadre 54 cm</small>
-                            <div class="price"><strong>140 CHF</strong><em>Bon</em></div>
-                        </div>
-                    </article>
-                    <article class="item">
-                        <div class="ph" style="background:#f6d5d5" aria-hidden="true">☕</div>
-                        <div class="body">
-                            <h3>Set de tasses</h3><small>Maison · 6 pièces</small>
-                            <div class="price"><strong>10 CHF</strong><em>Comme neuf</em></div>
-                        </div>
-                    </article>
-                </div>
-            </section>
+        <section id="Articles" class="panel" hidden>
+            <h2>Nos articles</h2>
+            <p>Coming soon !</p>
+        </section>
 
-            <section id="cours">
-                <h2>Cours d’informatique</h2>
-                <div class="grid">
-                    <article class="item">
-                        <div class="ph" style="background:#d4e2d0" aria-hidden="true">💻</div>
-                        <div class="body">
-                            <h3>Premiers pas</h3><small>Allumer, naviguer, envoyer un e-mail</small>
-                            <div class="price"><strong>25 CHF</strong><em>2 h</em></div>
-                        </div>
-                    </article>
-                    <article class="item">
-                        <div class="ph" style="background:#e3ecd9" aria-hidden="true">📄</div>
-                        <div class="body">
-                            <h3>Bureautique</h3><small>Texte, tableur et présentation</small>
-                            <div class="price"><strong>40 CHF</strong><em>4 h</em></div>
-                        </div>
-                    </article>
-                    <article class="item">
-                        <div class="ph" style="background:#dfe8d6" aria-hidden="true">📱</div>
-                        <div class="body">
-                            <h3>Smartphone et sécurité</h3><small>Applications, mots de passe, arnaques</small>
-                            <div class="price"><strong>30 CHF</strong><em>3 h</em></div>
-                        </div>
-                    </article>
-                    <article class="item">
-                        <div class="ph" style="background:#e8e4c8" aria-hidden="true">🔧</div>
-                        <div class="body">
-                            <h3>Entretenir son ordinateur</h3><small>Nettoyage, mises à jour, réparations
-                                simples</small>
-                            <div class="price"><strong>35 CHF</strong><em>3 h</em></div>
-                        </div>
-                    </article>
-                </div>
-            </section>
+        <section id="Contactes" class="panel" hidden>
+            <h2>Nous contacter</h2>
+            <p>Notre addresse mail: secondmain.reparation@gmail.com</p>
+        </section>
+    </main>
 
-            <section id="fonctionnement">
-                <h2>Comment ça marche</h2>
-                <ol class="steps">
-                    <li>
-                        <h3>Publiez</h3>
-                        <p>Prenez deux photos, indiquez l’état et fixez votre prix.</p>
-                    </li>
-                    <li>
-                        <h3>Échangez</h3>
-                        <p>Les acheteurs vous écrivent. Vous convenez d’un envoi ou d’une remise en main propre.</p>
-                    </li>
-                    <li>
-                        <h3>Encaissez</h3>
-                        <p>Le paiement est versé dès que l’acheteur confirme la réception.</p>
-                    </li>
-                </ol>
-            </section>
+    <script>
+        const chips = document.querySelectorAll('.chip');
+        const panels = document.querySelectorAll('.panel');
 
-            <section id="contact">
-                <div class="cta">
-                    <h2>Une question, un objet à vendre, un cours à réserver ?</h2>
-                    <a class="btn" href="mailto:contact@remise.example">Nous contacter</a>
-                </div>
-            </section>
-        </main>
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                chips.forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
 
-        <footer>© 2026 Remise. Chaque objet réutilisé évite une production neuve.</footer>
-    </div>
+                // affiche uniquement la div dont l'id correspond au data-target
+                const id = chip.dataset.target;
+                panels.forEach(p => { p.hidden = (p.id !== id); });
+            });
+        });
+    </script>
 </body>
 
 </html>
