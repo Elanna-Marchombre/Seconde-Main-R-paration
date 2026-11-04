@@ -13,6 +13,41 @@
             box-sizing: border-box;
         }
 
+        /* Bouton principal : vert foncé, comme le filtre actif */
+        .btn {
+            display: inline-block;
+            padding: 0 26px;
+            line-height: 62px;
+            /* 62px + 2×3px de bordure = 68px, comme .chip */
+            border: 3px solid #4a6b53;
+            border-radius: 999px;
+            background: #4a6b53;
+            color: #fff;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background .2s, color .2s, border-color .2s;
+        }
+
+        .btn:hover {
+            background: #3a5642;
+            border-color: #3a5642;
+        }
+
+        /* Bouton secondaire : clair, comme les filtres inactifs */
+        .btn-light {
+            background: #f8faf6;
+            border-color: #cdd9c8;
+            color: #1c2b21;
+        }
+
+        .btn-light:hover {
+            background: #eef3ea;
+            border-color: #cdd9c8;
+        }
+
         body {
             margin: 0;
             background: #e7efe3;
@@ -141,7 +176,7 @@
 
 <body>
     <header>
-        <h1>Seconde Main & Réparation</h1>
+        <h1>RebootCycle</h1>
     </header>
 
     <main>
@@ -159,6 +194,7 @@
                     <div class="card-visual vert"><img src="IAM.jpg" alt="Utilisation de l'IA"></div>
                     <div class="card-body">
                         <h3 class="card-title">Utilisation de l'IA</h3>
+                        <a class="btn" href="cour_ia.html">Voir le Cours</a>
                         <p class="card-meta"></p>
                     </div>
                 </article>
@@ -167,6 +203,7 @@
                     <div class="card-visual rose"><img src="CoursPC.webp" alt="Cours PC Windows"></div>
                     <div class="card-body">
                         <h3 class="card-title">Utiliser son PC correctement</h3>
+                        <a class="btn" href="cour_use_windows.html">Voir le Cour</a>
                         <p class="card-meta">Windows</p>
                     </div>
                 </article>
@@ -175,6 +212,7 @@
                     <div class="card-visual menthe"><img src="Securite.jpg" alt="Sécurité informatique"></div>
                     <div class="card-body">
                         <h3 class="card-title">Sécurité informatique</h3>
+                        <a class="btn" href="cour_secu.html">Voir le Cours</a>
                         <p class="card-meta">Windows</p>
                     </div>
                 </article>
@@ -183,6 +221,7 @@
                     <div class="card-visual menthe"><img src="MDP.jpg" alt="Gestionnaire de mots de passe"></div>
                     <div class="card-body">
                         <h3 class="card-title">Gestionnaire de mots de passe</h3>
+                        <a class="btn" href="cour_MDP.html">Voir le Cours</a>
                         <p class="card-meta">Windows & Téléphone</p>
                     </div>
                 </article>
